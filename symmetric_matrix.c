@@ -72,7 +72,7 @@ int main() {
     printf("Enter the elements - \n");
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < n; j++) {
-            printf("Enter the elements - \n");
+            printf("Enter the elements [%d][%d] : ", i, j);
             scanf("%d", &mat[i][j]);
         }
     }
@@ -87,15 +87,17 @@ int main() {
 
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < n; j++) {
-            if (temp[i][j] == mat[i][j]) 
-                found = 1;
+            if (mat[i][j] != mat[j][i]) {
+                found = 0;
+                break;
+            }    
         }
     }
 
     if (found == 1) 
         printf("Symmetric Matrix");
     else 
-        printf("Not Symmetric MAtrix"); 
+        printf("Not Symmetric Matrix"); 
         
     return 0;
 }
