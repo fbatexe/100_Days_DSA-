@@ -1,0 +1,56 @@
+/*
+Problem: Given an array of integers, count the number of subarrays whose sum is equal to zero.
+
+Input:
+- First line: integer n
+- Second line: n integers
+
+Output:
+- Print the count of subarrays having sum zero
+
+Example:
+Input:
+6
+1 -1 2 -2 3 -3
+
+Output:
+6
+*/
+
+#include <stdio.h>
+
+int main() {
+
+    int n;
+    int i, j;
+
+    printf("Enter size of array : ");
+    scanf("%d", &n);
+
+    int a[n];
+
+    printf("Enter array elements : ");
+    for(i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+    }
+
+    int count = 0;
+
+    for(i = 0; i < n; i++) {
+
+        int sum = 0;
+
+        for(j = i; j < n; j++) {
+
+            sum = sum + a[j];
+
+            if(sum == 0) {
+                count++;
+            }
+        }
+    }
+
+    printf("%d", count);
+
+    return 0;
+}
