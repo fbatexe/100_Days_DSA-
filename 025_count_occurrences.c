@@ -10,7 +10,7 @@ Output:
 - Print the number of times the key appears in the linked list
 
 Example:
-Input:
+Input :
 6
 10 20 30 20 40 20
 20
